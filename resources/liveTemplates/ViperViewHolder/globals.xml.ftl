@@ -8,7 +8,7 @@
         value="${projectOut}/src/main/java/${slashedPackageName(packageName)}" />
     <global
         id="prefix"
-        value="<#if className?contains("ViewHolder")>${className?replace("ViewHolder", "")}<#else>${className}</#if>"
+        value="${className?replace("ViewHolder", "")}"
     />
     <global
         id="viperPackage"
@@ -23,9 +23,5 @@
 
 	<global
 		id="aggregateName"
-		value="<#if createAggregate>
-					${customAggregateName?replace("Item", "")?replace(" ", "")?trim}
-				<#else>
-					${className?replace("ViewHolder", "")?replace(" ", "")?trim}
-				</#if>"/>
+		value="<#if createAggregate>${customAggregateName?replace("Item", "")?replace(" ", "")?trim}<#else>${className?replace("ViewHolder", "")?replace(" ", "")?trim}</#if>"/>
 </globals>

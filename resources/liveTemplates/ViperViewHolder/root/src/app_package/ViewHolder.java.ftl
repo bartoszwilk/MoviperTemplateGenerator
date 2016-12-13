@@ -11,7 +11,6 @@ public class ${prefix}ViewHolder
         extends MvpBaseViewHolder<Object, ${prefix}Contract.View, ${prefix}Contract.Presenter>
         implements ${prefix}Contract.View {
 
-
 	public ${prefix}ViewHolder(View itemView) {
 		    super(itemView);
 	}

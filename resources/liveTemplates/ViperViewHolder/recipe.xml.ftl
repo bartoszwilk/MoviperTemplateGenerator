@@ -5,7 +5,7 @@
              to="${viperOut}/view/adapter/agregate/DisplayableItem.java" />
 
     <instantiate from="root/res/layout/vh_layout.xml.ftl"
-                   to="${escapeXmlAttribute(resOut)}/layout/vh_${prefix?lower_case}.xml" />
+                   to="${escapeXmlAttribute(resOut)}/layout/viewholder_${prefix?lower_case}.xml" />
 
     <instantiate from="root/src/app_package/Interactor.java.ftl"
                    to="${viperOut}/interactor/${prefix}Interactor.java" />
@@ -19,13 +19,13 @@
 		               to="${viperOut}/entity/${prefix}.java" />
 
 	<instantiate from="root/src/app_package/with_entity/PrefixedDisplayableItem.java.ftl"
-		               to="${viperOut}/view/adapter/agregate/${prefix}DisplayableItem.java" />
+		               to="${viperOut}/view/adapter/agregate/${aggregateName}Item.java" />
 
 	<instantiate from="root/src/app_package/with_entity/ViewHolder.java.ftl"
 		               to="${viperOut}/view/viewholder/${prefix}ViewHolder.java" />
 <#else>
 	<instantiate from="root/src/app_package/PrefixedDisplayableItem.java.ftl"
-		               to="${viperOut}/view/adapter/agregate/${prefix}DisplayableItem.java" />
+		               to="${viperOut}/view/adapter/agregate/${aggregateName}Item.java" />
 
 	<instantiate from="root/src/app_package/ViewHolder.java.ftl"
 		               to="${viperOut}/view/viewholder/${prefix}ViewHolder.java" />
