@@ -1,15 +1,13 @@
 package ${viperPackage}.view.adapter.agregate;
 
-import ${viperPackage}.entity.${prefix};
-
 public class ${aggregateName}Item implements DisplayableItem {
 
 	public static int TYPE = ${aggregateName}Item.class.hashCode();
 
-    private ${prefix} m${prefix};
+    private Object mObject;
 
-    public ${aggregateName}Item(${prefix} ${prefix?lower_case}) {
-        m${prefix} = ${prefix?lower_case};
+    public ${aggregateName}Item(Object object) {
+        mObject = object;
     }
 
     @Override
@@ -17,8 +15,8 @@ public class ${aggregateName}Item implements DisplayableItem {
 		return TYPE;
     }
 
-    public ${prefix} get${prefix}() {
-        return m${prefix};
+    public Object getObject() {
+        return mObject;
     }
 }
 

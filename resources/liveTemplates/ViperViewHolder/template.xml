@@ -34,11 +34,25 @@
 		help="This option requires to include additional library to your project" />
 
 	<parameter
+		id="createAggregate"
+		name="Create custom aggregate name?"
+		type="boolean"
+		default="false"
+		help="By default it's DisplayableItem" />
+
+	<parameter
+		id="customAggregateName"
+		name="Aggregate name"
+		type="string"
+		visibility="createAggregate" />
+
+	<parameter
 	    id="createEntity"
 	    name="Create related entity?"
 	    type="boolean"
 	    default="false"
 	    help="Generate an empty entity for the ViewHolder" />
+
 
     <globals file="globals.xml.ftl" />
     <execute file="recipe.xml.ftl" />

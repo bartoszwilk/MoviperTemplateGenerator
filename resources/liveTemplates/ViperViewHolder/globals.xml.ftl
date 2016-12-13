@@ -20,4 +20,12 @@
         id="viperOut"
         value="${projectOut}/src/main/java/<#if applicationPackage??>${slashedPackageName(applicationPackage)}/<#else>${slashedPackageName(packageName)}/</#if>viper"
     />
+
+	<global
+		id="aggregateName"
+		value="<#if createAggregate>
+					${customAggregateName?replace("Item", "")?replace(" ", "")?trim}
+				<#else>
+					${className?replace("ViewHolder", "")?replace(" ", "")?trim}
+				</#if>"/>
 </globals>
