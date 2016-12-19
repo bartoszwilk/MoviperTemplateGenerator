@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="1"
+    name="Viper RxFragment (LCE)"
+    description="It creates a Viper-managed RxFragment with LCE pattern implementation."
+    minApi="8"
+    minBuildApi="8">
+
+    <category value="Moviper" />
+
+    <parameter
+        id="className"
+        name="Fragment name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="MoviperFragment"
+        help="The name of the Viper-managed Fragment class to create" />
+
+    <parameter
+        id="createViewHelper"
+        name="Create ViewHelper for advanced Android transitions?"
+        type="boolean"
+        default="true"
+        help="Create ViewHelper that allows Routing accessing Fragment android.Views to allow Routing perform
+        advanced transitions." />
+
+	<parameter
+		id="viewState"
+		name="Enable ViewState handling"
+		type="boolean"
+		default="false"
+		help="Add ViewState handling by inheriting from Mosby-based LceViewStateFragment" />
+
+	<parameter
+		id="contentView"
+		name="ContentView"
+		type="string"
+		constraints="class|nonempty"
+		default="LinearLayout"
+		help="Provide the type of your ContentView. It has to inherit from android.View." />
+
+	<parameter
+		id="contentObject"
+		name="ContentObject"
+		type="string"
+		default="Object" />
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
