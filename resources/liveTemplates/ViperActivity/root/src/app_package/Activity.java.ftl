@@ -5,9 +5,10 @@ import android.support.annotation.NonNull;
 <#if viewState>
 import com.hannesdorfmann.mosby.mvp.viewstate.ViewState;</#if>
 import ${appPackage}.R;
-import ${viperPackage}.contract.${prefix}Contract;
-import ${viperPackage}.presenter.${prefix}Presenter;
-import com.mateuszkoslacz.moviper.base.view.activity.Viper<#if viewState>ViewState</#if>Activity;<#if viewState>
+import ${viperPackage}.contract.${prefix}Contract;<#if passiveMode>
+import com.mateuszkoslacz.moviper.iface.presenter.ViperPresenter;<#else>import ${viperPackage}.presenter.${prefix}Presenter;</#if><#if type?contains("DataBinding")>
+import ${appPackage}.databinding.Viewholder${prefix}Binding;</#if>
+import com.mateuszkoslacz.moviper.base.view.activity.<#if type == "">Viper<#if viewState>ViewState</#if>Activity;<#if viewState>autoinject.<#if vhType?contains("Passive")>passive.</#if></#if>${vhType};<#if vhType?contains("Passive")>
 import ${viperPackage}.view.viewstate.${prefix}ViewState;</#if>
 
 public class ${prefix}Activity
@@ -45,7 +46,7 @@ public class ${prefix}Activity
     protected void injectViews(View itemView) {
         
     }</#if>
-    <#if !type?contains("Default")>@Override
+    <#if type != "")>@Override
     protected int getLayoutId() {
         return R.layout.activity_${classToResource(className)};
     }</#if>
