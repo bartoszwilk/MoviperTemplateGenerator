@@ -18,6 +18,20 @@
         default="MoviperFragment"
         help="The name of the Viper-managed Fragment class to create" />
 
+	<parameter
+		    id="type"
+		    name="Activity type"
+		    type="enum"
+		    default="ViperViewHolder">
+		    <option id="" default="true">Default</option>
+		    <option id="Ai">Autoinject</option>
+		    <option id="ButterKnife">Butterknife</option>
+		    <option id="DataBinding">DataBinding</option>
+			<option id="AiPassive">Passive autoinject</option>
+			<option id="ButterKnifePassive">Passive butterknife</option>
+			<option id="DataBindingPassive">Passive DataBinding</option>
+	</parameter>
+
     <parameter
         id="createViewHelper"
         name="Create ViewHelper for advanced Android transitions?"

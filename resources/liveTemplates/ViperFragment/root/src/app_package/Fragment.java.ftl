@@ -44,4 +44,8 @@ public class ${prefix}Fragment
     public void onNewViewStateInstance() {  
           
     }</#if>
+    <#if type == "Ai" || type == "AiPassive">@Override
+    protected void injectViews(View itemView) {
+        
+    }</#if>  
 }
