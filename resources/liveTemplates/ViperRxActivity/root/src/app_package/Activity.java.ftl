@@ -6,8 +6,10 @@ import android.support.annotation.NonNull;
 import com.hannesdorfmann.mosby.mvp.viewstate.ViewState;</#if>
 import ${appPackage}.R;
 import ${viperPackage}.contract.${prefix}Contract;
-import ${viperPackage}.presenter.${prefix}Presenter;
-import com.mateuszkoslacz.moviper.base.view.activity.Viper<#if viewState>ViewState</#if>Activity;<#if viewState>
+import ${viperPackage}.presenter.${prefix}Presenter;<#if passiveMode>
+import com.mateuszkoslacz.moviper.iface.presenter.ViperPresenter;</#if><#if type?contains("DataBinding")>
+import ${appPackage}.databinding.Activity${prefix}Binding;</#if>
+import com.mateuszkoslacz.moviper.base.view.activity.<#if type != "">autoinject.</#if><#if passiveMode>passive.</#if><#if type?contains("DataBinding")>databinding.</#if><#if type?contains("ButterKnife")>butterknife.</#if>Viper${type}<#if viewState>ViewState</#if><#if passiveMode>Passive</#if>Activity;<#if viewState>
 import ${viperPackage}.view.viewstate.${prefix}ViewState;</#if>
 
 public class ${prefix}Activity
@@ -45,7 +47,7 @@ public class ${prefix}Activity
     protected void injectViews(View itemView) {
         
     }</#if>
-    <#if type != "")>@Override
+    <#if type != "">@Override
     protected int getLayoutId() {
         return R.layout.activity_${classToResource(className)};
     }</#if>
