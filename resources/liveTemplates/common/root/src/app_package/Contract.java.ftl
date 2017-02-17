@@ -1,7 +1,7 @@
 package ${viperPackage}.<#if packagesPerUseCase>${classToResource(className)}<#else>contract</#if>;
 
 import android.app.Activity;
-import com.hannesdorfmann.mosby.mvp.MvpView;
+import com.hannesdorfmann.mosby3.mvp.MvpView;
 <#if !passiveMode>import com.mateuszkoslacz.moviper.iface.presenter.ViperPresenter;
 </#if>import com.mateuszkoslacz.moviper.iface.interactor.ViperInteractor;
 import com.mateuszkoslacz.moviper.iface.presenter.routing.ViperPresenterForRouting;

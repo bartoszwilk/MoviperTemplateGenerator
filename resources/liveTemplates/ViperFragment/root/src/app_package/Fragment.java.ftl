@@ -24,11 +24,16 @@ public class ${prefix}Fragment
         Fragment${prefix}Binding</#if>>
         implements ${prefix}Contract.View<#if createViewHelper>, ${prefix}Contract.ViewHelper</#if> {
 
+    <#if !passiveMode>
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_${classToResource(className)}, container, false);
-    }
+    }<#else>
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+    }</#if>
 
     @NonNull
     @Override
